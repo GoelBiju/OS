@@ -33,7 +33,7 @@ uint16_t GlobalDescriptorTable::CodeSegmentSelector()
 }
 
 
-GlobalDescriptorTable::SegmentSelector::SegmentSelector(uint32_t base, uint32_t limit, uint8_t flags)
+GlobalDescriptorTable::SegmentDescriptor::SegmentDescriptor(uint32_t base, uint32_t limit, uint8_t flags)
 {
     uint8_t* target = (uint8_t*)this;
 
@@ -64,7 +64,7 @@ GlobalDescriptorTable::SegmentSelector::SegmentSelector(uint32_t base, uint32_t 
 }
 
 
-uint32_t GlobalDescriptorTable::SegmentSelector::Base()
+uint32_t GlobalDescriptorTable::SegmentDescriptor::Base()
 {
     uint8_t* target = (uint8_t*)this;
     uint32_t result = target[7];
@@ -76,7 +76,7 @@ uint32_t GlobalDescriptorTable::SegmentSelector::Base()
 }
 
 
-uint32_t GlobalDescriptorTable::SegmentSelector::Limit()
+uint32_t GlobalDescriptorTable::SegmentDescriptor::Limit()
 {
     uint8_t* target = (uint8_t*)this;
     uint32_t result = target[6] & 0xF;

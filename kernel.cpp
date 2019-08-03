@@ -1,4 +1,8 @@
 
+#include "types.h"
+#include "gdt.h"
+
+
 // Print a string to the screen in black and white.
 void printf(char* str) 
 {
@@ -24,6 +28,8 @@ extern "C" void callConstructors()
 extern "C" void kernelMain(const void* multiboot_structure, unsigned int /*magicnumber*/) 
 {
     printf("Hello Goel!");
+
+    GlobalDescriptorTable gdt;
 
     while(1);
 }
