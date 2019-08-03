@@ -23,7 +23,7 @@ extern "C" void callConstructors()
 // Entry point to the kernel.
 extern "C" void kernelMain(const void* multiboot_structure, unsigned int /*magicnumber*/) 
 {
-    printf("Hello world!");
+    printf("Hello Goel!");
 
     while(1);
 }
